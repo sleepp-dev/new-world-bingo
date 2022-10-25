@@ -139,28 +139,19 @@ input[type=button] {width: auto; overflow: visible;}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* END OF RESET */
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'IM Fell DW Pica', serif;
     background-color: #272727;
-    color: #c1c1c1;
+    background-image: url('../assets/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    color: #d5d5d5;
 }
 
 h1 {
@@ -169,6 +160,22 @@ h1 {
     margin-block: 1rem;
     letter-spacing: 0.15rem;
 }
+
+
+button {
+    font-family: 'IM Fell DW Pica', serif;
+    font-size: 1.5rem;
+    background-color: rgb(233, 205, 168);
+    margin: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    border: 2px solid rgb(225, 189, 141);
+}
+
+button:hover {
+    background-color: hsl(34, 60%, 85%);
+}
+
 
 .App {
     min-width: 750px;
@@ -222,7 +229,7 @@ h1 {
     place-items: center;
     width: 100%;
     height: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
     backface-visibility: hidden;
     background-image: url('../assets/nw-logo.jpg');
     background-size: contain;
@@ -249,11 +256,11 @@ h1 {
     inset: 0;
     display: block;
     content: '';
-    border-radius: 10px;
+    border-radius: 8px;
     backface-visibility: hidden;
     background-color: rgb(233, 205, 168);
     z-index: -1;
-    opacity: 0.7;
+    opacity: 0.85;
 }
 
 .tile.flipped {
@@ -276,16 +283,4 @@ svg {
     opacity: 0.6;
     background-color: rgb(233, 205, 168);
     transform: rotateY(-180deg);
-}
-
-button {
-    background-color: rgb(233, 205, 168);
-    margin: 1rem;
-    padding: 2rem 3rem;
-    border-radius: 10px;
-    border: 2px solid rgb(225, 189, 141);
-}
-
-button:hover {
-    background-color: hsl(34, 60%, 85%);
 }
