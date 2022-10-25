@@ -16,11 +16,11 @@ function App() {
   let n=5;
 
   let completions = JSON.parse(localStorage.getItem('completions')) || Array(n*n).fill(-1);
-  const sampledItems = JSON.parse(localStorage.getItem('items')) || shuffle(bingoItems).slice(0, n*n)
+  const items = JSON.parse(localStorage.getItem('items')) || shuffle(bingoItems).slice(0, n*n)
 
   // Stamping a tile saves the current card
   if (JSON.parse(localStorage.getItem('completions'))) {
-    localStorage.setItem('items', JSON.stringify(sampledItems))
+    localStorage.setItem('items', JSON.stringify(items))
   }
 
 
@@ -31,11 +31,10 @@ function App() {
   }
 
   return (
-    <BingoContext.Provider value={[sampledItems, completions]}>
+    <BingoContext.Provider value={[items, completions]}>
       <div className="App">
-        <h1>New World Drama Bingo</h1>
-        <Card n={n} items={sampledItems}/>
-        <button onClick={clearLocalStorage}>Forget this card</button>
+        <Card n={n} items={items}/>
+        <button onClick={clearLocalStorage}>New Card</button>
       </div>
     </BingoContext.Provider>
   );

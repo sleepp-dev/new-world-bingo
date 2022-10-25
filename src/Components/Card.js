@@ -14,11 +14,21 @@ export default function Card({n, items}) {
     let cardStyles = {
         display: 'grid',
         gridTemplateColumns: `repeat(${n}, 1fr)`,
+        gap: '1rem',
     }
 
     return (
-        <div className='card' style={cardStyles}>
-            {tiles}
-        </div>
+            <div className='card'>
+                <div className='cardHeader' style={cardStyles}>
+                    <div className='headerCell'>B</div>
+                    <div className='headerCell'>I</div>
+                    <div className='headerCell'>N</div>
+                    <div className='headerCell'>G</div>
+                    <div className='headerCell'>O</div>
+                </div>
+                <div className='cardBody' style={cardStyles}>
+                   {tiles}
+                </div>
+            </div>
     )
 }

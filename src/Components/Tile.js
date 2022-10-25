@@ -3,13 +3,14 @@ import StampIcon from './StampIcon';
 import {BingoContext} from '../App';
 
 export default function Tile( {item, i} ) {
-    const [, completions] = useContext(BingoContext)
+    const [items, completions] = useContext(BingoContext)
     const [completionStatus, setCompletionStatus] = useState(completions[i] || -1)
 
 function toggleCompletionStatus() {
     setCompletionStatus(completionStatus * -1) // 1 = complete; -1 = incomplete
     completions[i] *= -1
     localStorage.setItem('completions', JSON.stringify(completions))
+    localStorage.setItem('items', JSON.stringify(items))
 }
 
 let stamp = <></>
@@ -30,7 +31,6 @@ if (localStorage.getItem('completions')) {
         <div className={'tile ' + flipped} onClick={toggleCompletionStatus}>
             {stamp}
             <div className='front'>
-                <p>New World</p>
             </div>
             <div className='back'>
                 <p>{item}</p>
