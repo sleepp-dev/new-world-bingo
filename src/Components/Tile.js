@@ -22,13 +22,13 @@ if (completionStatus > 0) {
     )
 }
 
-let flipped=''
-if (localStorage.getItem('completions')) {
-    flipped='flipped'
+let flipped=' flipped'
+if (!localStorage.getItem('completions')) {
+    flipped=''
 }
 
     return (
-        <div className={'tile ' + flipped} onClick={toggleCompletionStatus}>
+        <div className={'tile' + flipped} onClick={toggleCompletionStatus}>
             {stamp}
             <div className='front'>
             </div>

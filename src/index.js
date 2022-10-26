@@ -1,3 +1,4 @@
+import { TERMINATORLESS_TYPES } from '@babel/types';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
@@ -11,13 +12,39 @@ root.render(
   </React.StrictMode>
 );
 
-window.addEventListener('load', e=>{
-  let tiles = document.querySelectorAll('.tile')
+function waitForElms(selector) {
+  return new Promise(resolve => {
+      if (document.querySelector(selector)) {
+          return resolve(document.querySelectorAll(selector));
+      }
 
-  //onLoad animation--only for brand new cards
-  if (localStorage.getItem('completions') === null) {
-    tiles.forEach((tile, i)=>{
-      setTimeout(()=>tile.classList.toggle('flipped'), i*25)
-    })
-  }
+      const observer = new MutationObserver(mutations => {
+          if (document.querySelectorAll(selector)) {
+              resolve(document.querySelectorAll(selector));
+              observer.disconnect();
+          }
+      });
+
+      observer.observe(document.body, {
+          childList: true,
+          subtree: true
+      });
+  });
+}
+
+//onLoad animation--only for brand new cards
+window.addEventListener('load', e=>{
+
+    waitForElms('.tile').then((tiles) => {
+      if (!localStorage.getItem('completions')) {
+          tiles.forEach((tile, i)=>{
+          console.log(`flipping ${i}`)
+          setTimeout(()=>tile.classList.toggle('flipped'), i*25)
+          console.log(`flipped ${i}`)
+      })
+    }
+  })
+
 });
+
+
