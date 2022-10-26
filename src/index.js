@@ -1,4 +1,3 @@
-import { TERMINATORLESS_TYPES } from '@babel/types';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
