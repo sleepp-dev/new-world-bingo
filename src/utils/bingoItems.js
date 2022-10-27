@@ -31,14 +31,13 @@ let bingoItems = [
     'Dramalord claims to hate drama',
     'Somebody makes a reference to the giant sausage',
     'Notable person is banned from the game',
-    'Somebody corners the market',
+    'Somebody corners the orichalcum market',
     'The company that claims the first territory loses it',
     'Somebody makes a New World drama calendar',
     'Sweatlord company advertises themselves as mercenaries',
     'Someone spams their Twitch in Global chat',
     'Streamer appears on server',
-    'One company buys two territories',
+    'One company controls two territories',
     'A top player is accused of (or caught) cheating',
-    'Egg memes in Global chat'
 ]
 export default bingoItems;
