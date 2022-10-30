@@ -284,3 +284,23 @@ svg {
     background-color: rgb(233, 205, 168);
     transform: rotateY(-180deg);
 }
+
+
+footer {
+    display: grid;
+    place-items: center;
+    background-color: rgba(255, 255, 255, 0.25);
+    font-size: 2rem;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+footer a {
+    display: grid;
+    place-items: center;
+}
+
+footer path {
+    width: 100%;
+    fill: black;
+}
