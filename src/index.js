@@ -37,9 +37,7 @@ window.addEventListener('load', e=>{
     waitForElms('.tile').then((tiles) => {
       if (!localStorage.getItem('completions')) {
           tiles.forEach((tile, i)=>{
-          console.log(`flipping ${i}`)
           setTimeout(()=>tile.classList.toggle('flipped'), i*25)
-          console.log(`flipped ${i}`)
       })
     }
   })

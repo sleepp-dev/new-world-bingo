@@ -151,7 +151,13 @@ body {
     background-image: url('../assets/bg.jpg');
     background-repeat: no-repeat;
     background-position: bottom;
+    background-size: cover;
     color: #d5d5d5;
+    min-width: 900px;
+}
+
+main {
+    min-height: 100vh;
 }
 
 h1 {
@@ -267,11 +273,6 @@ button:hover {
     transform: rotateY(-180deg);
   }
 
-svg {
-    fill: red;
-}
-
-
   .stamp {
     position: absolute;
     display: grid;
@@ -287,12 +288,15 @@ svg {
 
 
 footer {
+    /* position: absolute; */
+    width: 100%;
+    bottom: 0;
     display: grid;
     place-items: center;
-    background-color: rgba(255, 255, 255, 0.25);
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-top: 2rem;
-    padding-bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0.25);
+    padding-block: 1rem;
 }
 
 footer a {
