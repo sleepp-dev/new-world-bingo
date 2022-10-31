@@ -30,5 +30,4 @@ let bingoItems = [
 	'Someone creates a server-wide discord',
 	'A /dice gambling ring forms',
 ]
-]
 export default bingoItems;
