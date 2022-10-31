@@ -19,7 +19,7 @@ let bingoItems = [
 	'An edgy-sounding Syndicate company takes a territory',
 	'A religious-sounding Covenant company takes a territory',
 	'Territory flips twice in 7 days',
-	'Town flips and new company doesn't upgrade anything',
+	'Town flips and new company doesn\'t upgrade anything',
 	'Notable person is banned from the game',
 	'Bots are back',
 	'Somebody reaches 600 GS',
